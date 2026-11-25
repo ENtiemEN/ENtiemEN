@@ -1,11 +1,6 @@
-![Enrique Julca. A hooded cartographer stands above mountain contour lines beneath a crimson eclipse.](assets/cartographer.gif)
+<img src="assets/cartographer.gif" width="100%" alt="Enrique Julca. BSc Scientific Computing · UNMSM. Software Engineering, AI/ML/Data, Mathematical Modeling. A cartographer watches a crimson eclipse.">
 
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/intro-mobile.png">
-  <img src="assets/intro.png" width="100%" alt="BSc in Scientific Computing · UNMSM. My interests span applied mathematics, AI and machine learning, and quantitative finance. I use this GitHub to keep my study notes and code.">
-</picture>
-
-![Never Stop. Rotating Fourier epicycles trace a portrait of Guts from Berserk.](assets/never-stop.gif)
+<img src="assets/never-stop.gif" width="100%" alt="Never Stop. Rotating Fourier epicycles trace a portrait of Guts from Berserk.">
 
 <!-- language-card:start -->
 <picture>

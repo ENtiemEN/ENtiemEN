@@ -4,7 +4,7 @@ import json
 import os
 import sys
 from collections import Counter
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timezone
 from html import escape
 from pathlib import Path
 from time import sleep
@@ -62,14 +62,14 @@ def collect(token, profile):
     return totals, counts
 
 
-def render(names, shares, counts, history, today, mobile):
+def render(names, shares, counts, mobile):
     w, header, step, margin = (343, 92, 64, 16) if mobile else (1000, 145, 62, 49)
     height = header + step*len(names) + (18 if mobile else 23)
     art = "mobile.png" if mobile else "desktop.png"
     encoded = base64.b64encode((ROOT/"scripts/art"/art).read_bytes()).decode()
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{height}" viewBox="0 0 {w} {height}">',
-        '<title>Languages by code share, repository presence and 30-day trend</title>',
+        '<title>Languages by code share and repository presence</title>',
         '<defs><pattern id="hatch" width="4" height="8" patternUnits="userSpaceOnUse"><path d="M-2 8l5-8m-1 8l5-8" fill="none" stroke="white" stroke-width="1.2"/></pattern>'
         '<mask id="cuts"><rect width="100%" height="100%" fill="url(#hatch)"/></mask></defs>',
         '<rect width="100%" height="100%" fill="#19191c"/>',
@@ -83,42 +83,19 @@ def render(names, shares, counts, history, today, mobile):
     def line(x, y, end, color):
         svg.append(f'<path d="M{x} {y}H{end}" stroke="{color}"/>')
 
-    days = sorted(history)
-    window_start = today - timedelta(days=29)
-    series = {name: [history[day].get(name, 0) for day in days] for name in names}
-    amplitude = max((abs(v-values[0]) for values in series.values() for v in values), default=0)
-    scale = min(2.4 if mobile else 3.2, 18 / max(amplitude, 0.01))
     for i, name in enumerate(names):
         y = header + i*step + (26 if mobile else 33)
         value = shares[name]
         color = "#d3838e" if i == 0 else "#c6b9a5"
         label(margin, y, name, min(18 if mobile else 25, 270 / max(len(name), 1)), serif=True)
-        label(207 if mobile else 621, y, str(counts[name]), 15 if mobile else 19, "middle")
-        x, end = (margin, 112) if mobile else (290, 465)
+        label(300 if mobile else 890, y, str(counts[name]), 15 if mobile else 19, "middle")
+        x, end = (162, 255) if mobile else (410, 680)
         by = y+20 if mobile else y
         span = (end-x)*value/100
         line(x, by, end, "#514a49")
         svg.append(f'<rect x="{x}" y="{by-4}" width="{span:.2f}" height="8" fill="{color}" mask="url(#cuts)"/>')
         svg.append(f'<path d="M{x+span:.2f} {by-4}v8" stroke="{color}"/>')
-        label(126 if mobile else 493, by, f"{value:.1f}%", 12 if mobile else 18)
-        left, right = (248, 322) if mobile else (727, 875)
-        baseline = y+4
-        line(left, baseline, right, "#413d3e")
-        values = series[name]
-        points = []
-        previous = None
-        for day, v in zip(days, values):
-            observed = date.fromisoformat(day)
-            px = left+(right-left)*(observed-window_start).days/29
-            py = baseline-(v-values[0])*scale
-            joined = previous is not None and (observed-previous).days == 1
-            points.append(f'{"L" if joined else "M"}{px:.2f} {py:.2f}')
-            svg.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="1" fill="{color}"/>')
-            previous = observed
-        svg.append(f'<path d="{" ".join(points)}" fill="none" stroke="{color}" stroke-width="1.7"/>')
-        svg.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="2.7" fill="{color}"/>')
-        if not mobile and len(days)>1:
-            label(w-margin, y, f"{values[-1]-values[0]:+.1f} pp", 14, "end")
+        label(162 if mobile else 708, y-3 if mobile else by, f"{value:.1f}%", 12 if mobile else 18)
         line(margin, header+(i+1)*step+2, w-margin, "#413d3e")
     return "\n".join(svg+["</svg>", ""])
 
@@ -145,7 +122,7 @@ def publish(root, totals, counts, today):
     picture = ('<picture>\n  <source media="(max-width: 600px)" srcset="assets/languages-mobile.svg">\n'
                f'  <img src="assets/languages.svg" alt="{escape(alt, quote=True)}" width="100%">\n</picture>')
     for mobile, filename in [(False,"languages.svg"), (True,"languages-mobile.svg")]:
-        (root/"assets"/filename).write_text(render(names, shares, counts, history, today, mobile), encoding="utf-8")
+        (root/"assets"/filename).write_text(render(names, shares, counts, mobile), encoding="utf-8")
     state.parent.mkdir(exist_ok=True)
     state.write_text(json.dumps(history, sort_keys=True, indent=2)+"\n", encoding="utf-8")
     readme.write_text(before+START+"\n"+picture+"\n"+END+after, encoding="utf-8")
