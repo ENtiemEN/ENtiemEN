@@ -5,6 +5,6 @@
 <!-- language-card:start -->
 <picture>
   <source media="(max-width: 600px)" srcset="assets/languages-mobile.svg">
-  <img src="assets/languages.svg" alt="Languages by code share. TypeScript: 32.5% in 3 repositories; Jupyter Notebook: 27.0% in 1 repository; C: 14.4% in 3 repositories; Python: 13.7% in 12 repositories; PLpgSQL: 5.3% in 1 repository" width="100%">
+  <img src="assets/languages.svg" alt="Languages by code share. TypeScript: 48.0% in 3 repositories; C: 21.2% in 3 repositories; Python: 20.3% in 12 repositories; C++: 7.2% in 3 repositories; JavaScript: 2.8% in 10 repositories" width="100%">
 </picture>
 <!-- language-card:end -->

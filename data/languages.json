@@ -1,16 +1,14 @@
 {
   "2026-11-25": {
-    "Batchfile": 0.05,
-    "C": 14.38,
-    "C#": 0.13,
-    "C++": 4.88,
-    "CMake": 0.12,
-    "JavaScript": 1.87,
+    "Batchfile": 0.07,
+    "C": 21.25,
+    "C#": 0.19,
+    "C++": 7.21,
+    "CMake": 0.18,
+    "JavaScript": 2.77,
     "Julia": 0.01,
-    "Jupyter Notebook": 27.02,
-    "MATLAB": 0.02,
-    "PLpgSQL": 5.31,
-    "Python": 13.71,
-    "TypeScript": 32.51
+    "MATLAB": 0.04,
+    "Python": 20.26,
+    "TypeScript": 48.03
   }
 }

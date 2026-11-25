@@ -6,36 +6,36 @@
 <text x="16" y="118" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">TypeScript</text>
 <text x="300" y="118" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">3</text>
 <path d="M162 138H255" stroke="#514a49"/>
-<rect x="162" y="134" width="30.23" height="8" fill="#d3838e" mask="url(#cuts)"/>
-<path d="M192.23 134v8" stroke="#d3838e"/>
-<text x="162" y="115" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">32.5%</text>
+<rect x="162" y="134" width="44.67" height="8" fill="#d3838e" mask="url(#cuts)"/>
+<path d="M206.67 134v8" stroke="#d3838e"/>
+<text x="162" y="115" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">48.0%</text>
 <path d="M16 158H327" stroke="#413d3e"/>
-<text x="16" y="182" dy=".34em" font-family="Georgia,serif" font-size="16.875" fill="#ede4d3" text-anchor="start">Jupyter Notebook</text>
-<text x="300" y="182" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">1</text>
+<text x="16" y="182" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">C</text>
+<text x="300" y="182" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">3</text>
 <path d="M162 202H255" stroke="#514a49"/>
-<rect x="162" y="198" width="25.13" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
-<path d="M187.13 198v8" stroke="#c6b9a5"/>
-<text x="162" y="179" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">27.0%</text>
+<rect x="162" y="198" width="19.76" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
+<path d="M181.76 198v8" stroke="#c6b9a5"/>
+<text x="162" y="179" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">21.2%</text>
 <path d="M16 222H327" stroke="#413d3e"/>
-<text x="16" y="246" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">C</text>
-<text x="300" y="246" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">3</text>
+<text x="16" y="246" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">Python</text>
+<text x="300" y="246" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">12</text>
 <path d="M162 266H255" stroke="#514a49"/>
-<rect x="162" y="262" width="13.37" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
-<path d="M175.37 262v8" stroke="#c6b9a5"/>
-<text x="162" y="243" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">14.4%</text>
+<rect x="162" y="262" width="18.84" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
+<path d="M180.84 262v8" stroke="#c6b9a5"/>
+<text x="162" y="243" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">20.3%</text>
 <path d="M16 286H327" stroke="#413d3e"/>
-<text x="16" y="310" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">Python</text>
-<text x="300" y="310" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">12</text>
+<text x="16" y="310" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">C++</text>
+<text x="300" y="310" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">3</text>
 <path d="M162 330H255" stroke="#514a49"/>
-<rect x="162" y="326" width="12.75" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
-<path d="M174.75 326v8" stroke="#c6b9a5"/>
-<text x="162" y="307" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">13.7%</text>
+<rect x="162" y="326" width="6.71" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
+<path d="M168.71 326v8" stroke="#c6b9a5"/>
+<text x="162" y="307" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">7.2%</text>
 <path d="M16 350H327" stroke="#413d3e"/>
-<text x="16" y="374" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">PLpgSQL</text>
-<text x="300" y="374" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">1</text>
+<text x="16" y="374" dy=".34em" font-family="Georgia,serif" font-size="18" fill="#ede4d3" text-anchor="start">JavaScript</text>
+<text x="300" y="374" dy=".34em" font-family="Consolas,monospace" font-size="15" fill="#ede4d3" text-anchor="middle">10</text>
 <path d="M162 394H255" stroke="#514a49"/>
-<rect x="162" y="390" width="4.94" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
-<path d="M166.94 390v8" stroke="#c6b9a5"/>
-<text x="162" y="371" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">5.3%</text>
+<rect x="162" y="390" width="2.58" height="8" fill="#c6b9a5" mask="url(#cuts)"/>
+<path d="M164.58 390v8" stroke="#c6b9a5"/>
+<text x="162" y="371" dy=".34em" font-family="Consolas,monospace" font-size="12" fill="#ede4d3" text-anchor="start">2.8%</text>
 <path d="M16 414H327" stroke="#413d3e"/>
 </svg>
