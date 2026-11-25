@@ -50,7 +50,7 @@ def collect(token, profile):
             languages = api(f'/repos/{quote(owner)}/{quote(repo["name"])}/languages', token)
             private_seen |= repo["private"]
             for language, size in languages.items():
-                if language not in {"HTML", "CSS"} and size > 0:
+                if language not in {"HTML", "CSS", "PLpgSQL", "Jupyter Notebook"} and size > 0:
                     totals[language] += size
                     counts[language] += 1
         if len(repos) < 100:
