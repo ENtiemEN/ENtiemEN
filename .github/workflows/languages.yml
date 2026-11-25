@@ -31,7 +31,7 @@ jobs:
           LANG_STATS_TOKEN: ${{ secrets.LANG_STATS_TOKEN }}
       - name: Publish aggregate statistics
         run: |
-          git add -- README.md assets/languages.svg assets/languages-mobile.svg data/languages.json
+          git add -- README.md assets/languages/ data/languages.json
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

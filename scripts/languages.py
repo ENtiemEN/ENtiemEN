@@ -1,5 +1,6 @@
 """Build the GitHub profile's language cards from aggregate repository metadata."""
 import base64
+import hashlib
 import json
 import os
 import sys
@@ -119,10 +120,20 @@ def publish(root, totals, counts, today):
         unit = "repository" if counts[name] == 1 else "repositories"
         descriptions.append(f"{name}: {shares[name]:.1f}% in {counts[name]} {unit}")
     alt = "Languages by code share. " + "; ".join(descriptions)
-    picture = ('<picture>\n  <source media="(max-width: 600px)" srcset="assets/languages-mobile.svg">\n'
-               f'  <img src="assets/languages.svg" alt="{escape(alt, quote=True)}" width="100%">\n</picture>')
-    for mobile, filename in [(False,"languages.svg"), (True,"languages-mobile.svg")]:
-        (root/"assets"/filename).write_text(render(names, shares, counts, mobile), encoding="utf-8")
+    directory = root/"assets"/"languages"
+    directory.mkdir(exist_ok=True)
+    paths = {}
+    for layout in ("desktop", "mobile"):
+        data = render(names, shares, counts, layout == "mobile").encode("utf-8")
+        digest = hashlib.sha256(data).hexdigest()[:16]
+        path = directory/f"{layout}-{digest}.svg"
+        path.write_bytes(data)
+        paths[layout] = path.relative_to(root).as_posix()
+        for previous in directory.glob(f"{layout}-*.svg"):
+            if previous != path:
+                previous.unlink()
+    picture = (f'<picture>\n  <source media="(max-width: 600px)" srcset="{paths["mobile"]}">\n'
+               f'  <img src="{paths["desktop"]}" alt="{escape(alt, quote=True)}" width="100%">\n</picture>')
     state.parent.mkdir(exist_ok=True)
     state.write_text(json.dumps(history, sort_keys=True, indent=2)+"\n", encoding="utf-8")
     readme.write_text(before+START+"\n"+picture+"\n"+END+after, encoding="utf-8")
