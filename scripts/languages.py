@@ -137,7 +137,11 @@ def publish(root, totals, counts, today):
     _, closing, after = remainder.partition(END)
     if not opening or not closing:
         raise ValueError("Missing language card markers in README.")
-    alt = "Languages by code share. " + "; ".join(f"{n}: {shares[n]:.1f}% in {counts[n]} repositories" for n in names)
+    descriptions = []
+    for name in names:
+        unit = "repository" if counts[name] == 1 else "repositories"
+        descriptions.append(f"{name}: {shares[name]:.1f}% in {counts[name]} {unit}")
+    alt = "Languages by code share. " + "; ".join(descriptions)
     picture = ('<picture>\n  <source media="(max-width: 600px)" srcset="assets/languages-mobile.svg">\n'
                f'  <img src="assets/languages.svg" alt="{escape(alt, quote=True)}" width="100%">\n</picture>')
     for mobile, filename in [(False,"languages.svg"), (True,"languages-mobile.svg")]:
