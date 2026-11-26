@@ -10,5 +10,17 @@
     "MATLAB": 0.04,
     "Python": 20.26,
     "TypeScript": 48.03
+  },
+  "2026-11-26": {
+    "Batchfile": 0.07,
+    "C": 21.25,
+    "C#": 0.19,
+    "C++": 7.21,
+    "CMake": 0.18,
+    "JavaScript": 2.77,
+    "Julia": 0.01,
+    "MATLAB": 0.04,
+    "Python": 20.26,
+    "TypeScript": 48.03
   }
 }
